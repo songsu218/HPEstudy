@@ -1,0 +1,53 @@
+/* css파일 안에서 css를 불러올 때 */
+@import url("./css02.css");
+
+/* 
+    .box
+    div.box
+     */
+div {
+  /* 요소명 1점 */
+}
+.box {
+  /* class 10점 */
+}
+div.box {
+  /* 요소명.class 11점 */
+}
+
+.box1 {
+}
+.box1.box2 {
+  border: 1px solid green;
+}
+.box1 .box2 {
+  border: 1px solid rebeccapurple;
+}
+
+p {
+  /* !important 중요한 최상위로 적용할수 있음 */
+  color: green !important;
+}
+
+p {
+  /* !important 중요한 최상위로 적용할수 있음
+    코드는 위에서 아래로 실행되므로 위와같이 같이 적용되더라도 아래에 있는게
+    점수가 높다(아래가적용된다)
+    */
+  color: lightsalmon !important;
+}
+
+#test {
+  background-color: aqua;
+}
+
+#test.box {
+}
+
+div#test.box {
+}
+
+body > * {
+}
+body > * > * {
+}

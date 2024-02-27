@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이미지</title>
+    <style>
+        body {
+            background-color: beige;
+        }
+
+        div {
+            border: 1xp solid red;
+            width: 400px;
+        }
+
+        div img {
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <img src="./img/navi.jpeg" alt="나비" />
+        <img src="./img/campaign_character.png" alt="캐릭터" />
+        <!--
+            jpg : 압축률이 좋다. 투명영역 허용이 안된다.
+            png : 투명영역을 허용. 퀄리티가 좋다.
+            gif : 움직이는 애니메이션에 적합하다. 255컬러 사용.
+            svg : 코드형태로 제공, 대체적으로 ai(일러스트 소프트웨어)에서 확장자를 변경해서 저장할 수 있음.
+        -->
+        <img src="./img/svgImg.svg" alt="svg이미지">
+    </div>
+</body>
+
+</html>

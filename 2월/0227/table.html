@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>테이블 구조 익히기</title>
+</head>
+
+<body>
+    <h1>테이블 구조</h1>
+    <table border="1" style="border: 1px solid red;">
+        <caption>표 제목</caption>
+        <thead>
+            <tr>
+                <th colspan="3">상단제목1</th>
+                <!-- <th>상단제목1</th> -->
+                <!-- <th>상단제목1</th> -->
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th rowspan="2">셀1</th>
+                <td colspan="2" rowspan="2" style="height: 100px; width: 100px;">셀22</td>
+                <!-- <td>셀333</td> -->
+            </tr>
+            <tr>
+                <!-- <th>셀1</th> -->
+                <!-- <td>셀22</td> -->
+                <!-- <td>셀333</td> -->
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <th>하단</th>
+                <td colspan="2">하단</td>
+                <!-- <td>하단</td> -->
+            </tr>
+        </tfoot>
+    </table>
+</body>
+
+</html>
