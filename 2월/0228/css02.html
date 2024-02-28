@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>동적 의사 클래스</title>
+</head>
+
+<body>
+    <style>
+        .box1,
+        .box2 {
+            border: 1px solid red;
+            width: 200px;
+            padding: 20px;
+        }
+
+        a.box2 {
+            display: block;
+            outline: none;
+            color: black;
+            text-decoration: none;
+        }
+
+
+        /* .box1:hover {
+            background-color: blanchedalmond;
+            width: 250px;
+        } */
+        a.box2:focus {
+            border-width: 5px;
+        }
+
+        a.box2:visited {
+            color: blueviolet;
+        }
+
+        .box3 {
+            display: block;
+            outline: none;
+            border: none;
+        }
+
+        .box3:hover,
+        .box3:focus {
+            background-color: beige;
+        }
+
+        #textLink {
+            background-color: lightcoral;
+            height: 50vh;
+        }
+    </style>
+    <div class="box1">마우스 올리기</div>
+    <a href="#textLink" class="box2">링크요소</a>
+    <input type="text" class="box3" />
+    <input type="text" class="box3" />
+    <hr style="height: 50vh;" />
+    <div id="textLink">아래쪽</div>
+    <hr style="height: 50vh;" />
+</body>
+
+</html>
