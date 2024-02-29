@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: antiquewhite;
+        }
+
+        .bannerBox {
+            background-color: greenyellow;
+            width: calc(100% - 32px);
+            margin: 100px auto;
+            border-radius: 16px;
+            height: 150px;
+            position: relative;
+            padding: 16px;
+            top: 0;
+            transition: 0.3s;
+        }
+
+        .bannerBox>* {
+            display: block;
+        }
+
+        .bannerBox span {
+            font-size: 15px;
+            color: green;
+        }
+
+        .bannerBox p {
+            font-weight: bold;
+        }
+
+        .bannerBox a {
+            display: inline;
+            background-color: white;
+            font-weight: bold;
+            border-radius: 16px;
+            position: static;
+            padding: 3px;
+            width: 100px;
+            margin-right: 10px;
+        }
+
+        .bannerBox a * {
+            position: relative;
+            display: inline;
+        }
+
+        .bannerBox a p {
+            margin-right: 20px;
+        }
+
+        .bannerBox img {
+            position: absolute;
+            width: 100px;
+            right: 10px;
+            bottom: 10px;
+        }
+
+        .bannerBox:hover {
+            top: -10px;
+        }
+
+        .bannerBox:hover a {
+            color: red;
+            background-color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bannerBox">
+        <span>역량진단</span>
+        <p>역량수준을 체크해보고, 되돌아보는 기회!</p>
+        <a href="#">
+            <p>대학원생</p>
+            <i>-></i>
+        </a>
+        <a href="#">
+            <p>재직자</p>
+            <i>-></i>
+        </a>
+        <img src="./img/icon2.png" alt="아이콘">
+    </div>
+</body>
+
+</html>

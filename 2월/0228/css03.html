@@ -93,10 +93,11 @@
         .box3::after {
             /* content: ""; */
             border: 3px solid lightgreen;
-            width: 150px;
+            width: 100px;
             height: 50px;
             /* display: inline-block; */
             display: block;
+            border-radius: 10px 15px 20px 30px;
         }
 
         .box3::before {
@@ -113,6 +114,18 @@
     <div class="box3">
         <span>박스영역</span>
     </div>
+
+    <style>
+        .box4 {
+            width: 200px;
+            height: 100px;
+            border: 1px solid red;
+            border-radius: 20px 40px/30px;
+            background-color: rgba(255, 10, 255);
+            opacity: 0.5;
+        }
+    </style>
+    <div class="box4">박스영역</div>
 </body>
 
 </html>

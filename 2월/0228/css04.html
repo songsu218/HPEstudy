@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- px:
+    %: 부모를 기준으로 한 상대단위
+    vw / vh
+    em - 상속된 폰트 사이즈의 배수
+    rem - root 지정된 폰트 사이즈의 배수
+         -->
+
+    <!-- <style>
+        .box1 {
+            border: 1px solid red;
+            /* 적용할 수 있는 최소 사이즈 */
+            /* min-width: 600px; */
+            /* calc에서 단위와 단위 사이의 띄어쓰기를 해줘야 정상적으로 잘 작동한다. */
+            /* 반응형으로 웹디자인을 한다면 상대단위로 작성해야한다. */
+            /* width: calc((100% - 64px) / 2); */
+            /* 적용할 수 있는 최대 사이즈 */
+            /* width: 80%; */
+            width: 100vh;
+            max-width: 1400px;
+            /* height: 100%; */
+            margin: auto;
+            height: 100vh;
+        }
+
+        .box1>* {
+            border: 1px solid lightblue;
+        }
+
+        .box1 div {
+            width: 50%;
+        }
+    </style> -->
+    <!-- <header class="box1">
+        <p>박스1_1</p>
+        <div>박스1_2</div>
+    </header> -->
+
+    <style>
+        :root {
+            font-size: 20px;
+            --size: 20px;
+        }
+
+        .box2 {
+            /* font-size: 1rem; */
+            font-size: var(--size);
+            /* font-size: 10px; */
+            border: 1px solid red;
+            /* width: 160px; */
+            width: 10em;
+        }
+    </style>
+    test
+    <div class="box2">박스</div>
+</body>
+
+</html>
