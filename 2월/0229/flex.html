@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flex</title>
+    <style>
+        .con {
+            border: 1px solid red;
+            display: flex;
+            /* 기본값은 nowrap */
+            /* wrap */
+            /* flex-wrap: wrap; */
+            /* flex-direction: row-reverse; */
+            /* main축 정렬 */
+            /* justify-items: center; */
+            /* justify-content: center; */
+            /* 기본값 */
+            /* justify-content: flex-start;   */
+            /* justify-content: flex-end; */
+            /* justify-content: space-between; */
+            /* justify-content: space-around; */
+            /* justify-content: space-evenly; */
+
+            /* cross축 정렬 */
+            /* 한줄일때는 items 여러줄일때는 content */
+            /* align-items: flex-start; */
+            /* align-items: flex-end; */
+            /* align-items: center; */
+            /* align-content: center; */
+            /* align-content: space-between; */
+
+            /* justify-content: center;
+            align-content: center; */
+            width: 800px;
+            height: 100px;
+        }
+
+        .con>div {
+            border: 3px solid lightblue;
+            /* width: 200px;
+            height: 150px; */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* width: calc(100% / 3); */
+            /* 증가비율 */
+            /* flex-grow: 1; */
+            /* flex-basis: 0; */
+        }
+
+        .item1 {
+            flex-grow: 1;
+            order: 1;
+        }
+
+        .item2 {
+            order: -1;
+            flex-grow: 2;
+        }
+
+        .itme3 {
+            flex-grow: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 
+        flex 유연한
+        부모가 컨테이너
+        하위 자식이 아이템
+        선언을 하면 x축 방향으로 main(왼->오)축이 생김
+        y축 방향으로 cross(위->아래)축이 생김
+     -->
+    <h1>flex !</h1>
+    <div class="con">
+        <div class="item1">item1</div>
+        <div class="item2">item2 item2</div>
+        <div class="item3">item3 item3 item3</div>
+        <!-- <div class="item4">item4</div>
+        <div class="item5">item5</div>
+        <div class="item6">item6</div>
+        <div class="item7">item7</div>
+        <div class="item8">item8</div> -->
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>트랜스폼 학습</title>
+</head>
+
+<body>
+    <style>
+        .con {
+            border: 1px solid red;
+            width: 400px;
+            height: 400px;
+            margin: 50px auto;
+            /* perspective: 800px; */
+        }
+
+        .box1 {
+            border: 4px solid blue;
+            /* 실제 위치가 변경되는게 아닌 해당위치로 출력해준다. */
+            /* perspective(심도)는 사용한다면 젤 앞에 작성해야한다. */
+            /* translate */
+            /* rotate 각도 */
+            /* scale 배수 조정이며 자식 요소도 적용된다.(똑같이 크기가 커지거나 작아짐.) */
+            /* transform: translate(50px, 50px) rotate(20deg) scale(0.5); */
+            width: 400px;
+            height: 400px;
+            /* 3d를 사용하려면 perspective를 적용해야한다. or 부모에다가 값을 작성해도 된다. */
+            /* transform: perspective(100px) translate3d(50px, 50px, 50px); */
+            /* transform: translate3d(50px, 50px, 50px); */
+
+            /* rotate에서 90이상 돌아가면 뒷면이 보인다 */
+            transform: perspective(800px) rotateX(120deg);
+
+            /* backface-visibility: hidden;를 사용하여 뒷면을 안보이게 작성할 수 있다. */
+            backface-visibility: hidden;
+        }
+    </style>
+    <div class="con">
+        <div class="box1">박스1</div>
+        <div class="box2">박스2</div>
+    </div>
+</body>
+
+</html>

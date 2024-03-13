@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/my_reset.css">
+    <style>
+        /* .hd,
+        .hd>* {
+            border: 1px solid red;
+        } */
+
+        .hd {
+            width: 80%;
+            max-width: 1000px;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .hd ul {
+            display: flex;
+            border: 1px solid lightgreen;
+        }
+
+        .hd li {
+            border: 1px solid tomato;
+        }
+
+        .hd a {
+            border: 1px solid lightgray;
+            display: block;
+            padding: 1em 2em;
+        }
+
+        .hd a:hover {
+            background-color: aliceblue;
+        }
+
+        .hd .sub {
+            display: none;
+            position: absolute;
+        }
+
+        .hd .gnb>li:hover .sub {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="hd">
+        <h1>
+            <a href="#">
+                <img src="./img/main-logo.svg" alt="경기문화센터 로고">
+            </a>
+        </h1>
+        <nav>
+            <ul class="gnb">
+                <li>
+                    <a href="#">메뉴1</a>
+                    <ul class="sub">
+                        <li><a href="#">서브메뉴1</a></li>
+                        <li><a href="#">서브메뉴2</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">메뉴2</a>
+                    <ul class="sub">
+                        <li><a href="#">서브메뉴1</a></li>
+                        <li><a href="#">서브메뉴2</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">메뉴3</a></li>
+                <li><a href="#">메뉴4</a></li>
+                <li><a href="#">메뉴5</a></li>
+            </ul>
+        </nav>
+        <div>
+
+        </div>
+    </header>
+</body>
+
+</html>

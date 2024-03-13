@@ -1,0 +1,242 @@
+@charset 'utf-8';
+@import url("https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Dongle&display=swap");
+@font-face {
+  font-family: "S-CoreDream-3Light";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+:root {
+  /* 1rem = 16px */
+  font-size: 16px;
+}
+
+body {
+  font-family: "S-CoreDream-3Light";
+  font-weight: 900;
+  line-height: 1;
+  /* font: 20px/1.6 "Dongle", sans-serif; */
+  color: #888;
+}
+
+.wrap {
+  overflow: hidden;
+}
+
+.mw {
+  /* 고전적으로 중앙 정렬은 마진 auto를 줌으로써 중앙정렬시킨다. */
+  max-width: 1200px;
+  width: calc(100% - 4rem);
+  margin: auto;
+  border: 1px solid red;
+}
+
+.hd {
+  /* border: 5px solid lightgray; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  z-index: 999;
+}
+.hd .logo {
+  /* 마진보다는 패딩을 우선으로 작성하고 고민한다. */
+  padding: 1rem 0;
+  width: 120px;
+}
+
+.hd .logo:hover {
+  opacity: 0.8;
+}
+
+/* 가상태그 */
+.hd nav::before {
+  /* border: 1px solid red; */
+  background-color: aliceblue;
+  content: "여기";
+  position: absolute;
+  top: 100%;
+  left: -500%;
+  width: 1000%;
+  height: 0px;
+  opacity: 0;
+  transition: 0.3s;
+}
+
+/* 중첩해서 사용할 때는 호버를 먼저 쓴다. */
+.hd nav:hover::before {
+  height: 120px;
+  opacity: 1;
+}
+
+.hd .gnb {
+  /* border: 5px solid lightblue; */
+  display: flex;
+}
+
+.hd .gnb a {
+  display: block;
+  white-space: nowrap;
+}
+
+.hd .gnb > li:hover > a {
+  color: red;
+  background-color: aliceblue;
+}
+
+.hd .gnb > li {
+  /* border: 1px solid tomato; */
+  /* 하위 a의 포지션의 기준점 */
+  position: relative;
+  padding: 1rem 0;
+}
+
+.hd .gnb > li > a {
+  /* border: 1px solid blue; */
+  padding: 1rem 2rem;
+  font-family: "Black Han Sans", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.hd .sub {
+  /* border: 1px solid lightgreen; */
+  position: absolute;
+  /* 부모를 기준으로 넓이가 100% */
+  width: 100%;
+  top: 100%;
+  text-align: center;
+  /* display: none; */
+  /* display none에서 block으로 주는거는 트랜지션이 적용되지 않는다. */
+  transition: opacity 0.5s;
+  opacity: 0;
+  /* height: 0; */
+  overflow: hidden;
+}
+
+.hd .gnb:hover .sub {
+  /* display: block; */
+  opacity: 1;
+  height: 120px;
+}
+
+/* li말고 a에 주는 이유
+    a의 영역을 좀 더 넓게 줌으로써 선택하기 쉽게 하기 위해서이다.  */
+.hd .sub a {
+  padding: 0.5rem;
+}
+
+.hd .func {
+  /* border: 1px solid red; */
+  display: flex;
+}
+
+.hd .func a {
+  /* border: 1px solid lightblue; */
+  padding: 0.5rem 1rem;
+  font-size: 0.75rem;
+  position: relative;
+  white-space: nowrap;
+}
+
+.hd .func a i {
+  font-size: 0.8em;
+  color: #999;
+  vertical-align: middle;
+}
+
+.hd .func a::before {
+  content: "";
+  position: absolute;
+  bottom: 5px;
+  /* 가운데 정렬 */
+  left: 50%;
+  transform: translateX(-50%);
+  height: 1px;
+  width: calc(100% - 2rem);
+  background-color: #999;
+  opacity: 0;
+}
+
+.hd .func a:hover::before {
+  opacity: 1;
+}
+
+/* 연습 */
+.box {
+  /* border: 1px solid red; */
+  width: 500px;
+  height: 500px;
+  display: flex;
+
+  /* flex-direction은 방향을 바꾸는것 */
+  flex-direction: column;
+  justify-content: space-between;
+  /* flex-wrap: wrap; */
+  /* align-content: center; */
+}
+
+.box > div {
+  /* border: 1px solid lightblue; */
+  width: 100%;
+
+  /* 여백에 대한 증가비율 */
+  /* flex-grow: 1; */
+  /* flex-basis: 0; */
+  /* flex: 1이 들어가면 div가 아이템이라는 것이다. */
+  /* flex: 1; */
+}
+
+.box {
+  width: 50px;
+  height: 50px;
+  border: 20px solid transparent;
+}
+.box:hover {
+  border-top-color: red;
+  border-top-width: 20px;
+}
+
+.banner {
+  /* border: 1px solid red; */
+  border-radius: 1rem;
+  width: 200px;
+  padding: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.banner a {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  color: transparent;
+}
+
+.ham {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  font-size: 1.5rem;
+  display: none;
+}
+
+.ham:hover,
+.ham:focus {
+  color: dodgerblue;
+}
+
+@media (max-width: 1000px) {
+  .hd nav,
+  .hd .func {
+    display: none;
+  }
+  .ham {
+    display: block;
+  }
+}

@@ -1,0 +1,40 @@
+/* .con {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 100px);
+  grid-template-areas:
+    "header header header"
+    "main main aside"
+    "footer footer .";
+} */
+
+.con {
+  display: grid;
+  /* grid-template-columns: repeat(3, 1fr); */
+  /* grid-template-rows: repeat(3, 100px); */
+  grid-template:
+    "header header header" 100px
+    "main main aside" 300px
+    "footer footer ." 50px
+    / 1fr 2fr 1fr;
+}
+
+.item1 {
+  grid-area: header;
+  background-color: aqua;
+}
+
+.item2 {
+  grid-area: main;
+  background-color: antiquewhite;
+}
+
+.item3 {
+  grid-area: aside;
+  background-color: lightblue;
+}
+
+.item4 {
+  grid-area: footer;
+  background-color: lightcoral;
+}

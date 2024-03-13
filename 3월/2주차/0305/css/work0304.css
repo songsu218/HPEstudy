@@ -1,0 +1,348 @@
+@charset 'utf-8';
+
+:root {
+}
+/*  */
+
+/* .hd {
+  border: 1px solid red;
+}
+
+.hd > * {
+  border: 1px solid lightblue;
+}
+
+.hd > * > * {
+  border: 1px solid greenyellow;
+}
+
+.hd > * > * > * {
+  border: 1px solid plum;
+}
+
+.hd > * > * > * > * {
+  border: 3px solid lightgreen;
+} */
+
+.logo {
+  /* 이미지는 넓이 또는 높이만 
+    지정하면 나머지 하나는 자동으로 
+    이미지 크기에 맞춰 지정해준다 */
+  /* width: 100px; */
+  /* height: 40px; */
+  width: 15%;
+  max-width: 250px;
+}
+
+/*  */
+body {
+  /* overflow: hidden; */
+}
+
+.wrap {
+  overflow: hidden;
+}
+
+.hd {
+  position: relative;
+  z-index: 9999;
+  padding: 1rem 0;
+  /* overflow: hidden; */
+}
+
+.hd::before {
+  content: "";
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background-color: aliceblue;
+  position: absolute;
+  right: -70px;
+  top: -50px;
+}
+
+.mw {
+  /* 최대 폭 */
+  max-width: 1200px;
+  /* 양쪽 여백 */
+  width: calc(100% - 2rem);
+  /* 중앙정렬 */
+  margin: auto;
+}
+
+.hd nav {
+  display: flex;
+  /* .mw에서 양 쪽 여백을 줬으므로 between 사용 */
+  justify-content: space-between;
+  /* items는 한줄 content는 여러줄 그러므로 items 사용 */
+  align-items: center;
+}
+
+.hd .btn_login {
+  border: 1px solid black;
+  border-radius: 20px;
+  width: 90px;
+  height: 40px;
+  /* 중앙 정렬 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.8rem;
+}
+
+.hd .btn_login:hover {
+  background-color: black;
+  color: white;
+}
+
+/* 테스트용 div에 주면 안되는경우 */
+/* .func:hover {
+  color: red;
+} */
+/* a는 기본적으로 파란색이며 블랙으로 초기화를 한번 했기 때문에 
+div로 컬러를 상속한다 하더라도 작동하지 않는다. */
+/* 이렇게 a를 지정해야 적용된다. */
+/* .func:hover a {
+  color: red;
+} */
+
+.ham {
+  display: none;
+}
+
+/* PC 버전 */
+@media (min-width: 1101px) {
+  .hd .gnb {
+    display: flex;
+    /* 첫번째 방법 */
+    /* width: 100%; */
+    /* 두번째 방법 */
+    /* flex-grow: 1;
+        flex-basis: auto;
+        flex-shrink: 0; */
+    /* 위의 세줄이 아래 한줄로 된다. */
+    /* flex: 1 0 0; */
+    flex: 1;
+    /* ----------------------- */
+    /* 오른쪽 정렬 */
+    justify-content: flex-end;
+    /* 양쪽 여백을 줌으로써 오른쪽 버튼과 공간 생성 */
+    padding: 0 1rem;
+  }
+
+  .hd .gnb a {
+    /* a요소를 블록으로 바꿈으로써 li 공간 차지 */
+    display: block;
+
+    /* 2번째 방법에서 줄바뀜 부분 없애기 */
+    white-space: nowrap;
+  }
+
+  .hd .gnb > li {
+    /* 첫번째 방법 */
+    /* li가 기준이 아닐 때 */
+    /* 사이드메뉴 중앙정렬 */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* 두번째 방법 */
+    /* li가 기준일 때 */
+    position: relative;
+    border: 1px solid red;
+  }
+
+  .hd .gnb > li::before {
+    content: "";
+    border: 1px solid lightblue;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    position: absolute;
+    background-color: dodgerblue;
+
+    /*  */
+    /* transition: width 0.3s 0.3s linear; */
+    /* 위에 코드를 풀면 */
+    /* transition-property: width;
+        transition-duration: 0.3s;
+        transition-delay: 0.3s;
+        transition-timing-function: linear; */
+
+    top: -1rem;
+    opacity: 0;
+    transition: 0.3s linear;
+    box-shadow: 0px 0 0 dodgerblue, -0px 0 0 dodgerblue;
+  }
+
+  .hd .gnb > li:hover::before {
+    /* width: 100%; */
+    box-shadow: 10px 0 0 dodgerblue, -10px 0 0 dodgerblue;
+    opacity: 1;
+  }
+
+  .hd .gnb > li > a {
+    padding: 1rem 1rem 1.5rem 1rem;
+    font-weight: bold;
+    transition: 0.3s;
+  }
+
+  .hd .gnb > li:hover > a {
+    color: dodgerblue;
+  }
+
+  .hd .gnb > li:hover .sub {
+    /* display: block; */
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .hd .sub {
+    /* 박스 디자인 */
+    border: 1px solid #999;
+    border-radius: 1rem;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    background-color: rgba(255, 255, 255, 0.5);
+    /* 블러처리 흐림처리 */
+    backdrop-filter: blur(5px);
+
+    padding: 1rem;
+    /* display none -> block은 트랜지션 적용x */
+    /* display: none; */
+    /* 비저빌리티는 트랜지션 적용o */
+    visibility: hidden;
+    position: absolute;
+    /* 첫 번째 방법 */
+    /* top: 55px; */
+    /* 두 번째 방법 */
+    /* 두번째 방법의 경우 상위 li의 폭에 맞춰 sub의 폭이 정해짐 */
+    top: 100%;
+    opacity: 0;
+    transition: 0.3s;
+    /* 위에서 아래로 떨어지는 디자인 효과 */
+    transform: translateY(-1rem);
+
+    /* width: 100%; */
+    min-width: 100px;
+  }
+
+  .hd .sub li:last-of-type a {
+    border-bottom: none;
+  }
+
+  .hd .sub a {
+    /* li 간의 간격 */
+    padding: 0.25rem 0;
+    /* 폰트 사이즈 */
+    font-size: 0.85rem;
+    /* 텍스트 중앙정렬 */
+    text-align: center;
+    border-bottom: 1px solid lightgray;
+  }
+
+  .hd .func {
+    /* padding-bottom: 1rem; */
+    margin-bottom: 1rem;
+  }
+}
+
+/* 디바이스 버전 */
+@media (max-width: 1100px) {
+  /* .gnb {
+    border: 1px solid red;
+  } */
+
+  /* .gnb > li {
+    border: solid lightblue;
+  } */
+
+  .gnb .sub {
+    /* display: none; */
+    height: 0;
+    overflow: hidden;
+    transition: 0.3s;
+  }
+  .gnb > li:hover > a {
+    background-color: #999;
+  }
+
+  .gnb > li:hover .sub {
+    /* border: 1px solid red; */
+    height: 100%;
+    /* min-height: 100%; */
+  }
+  .hd .gnb::before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    top: 0;
+    left: -100%;
+    backdrop-filter: blur(2px);
+  }
+
+  .hd .gnb {
+    display: none;
+    flex-direction: column;
+    align-items: flex-end;
+    position: fixed;
+    top: 0;
+    right: 0;
+    background-color: #eaeaea;
+    width: 50%;
+    height: 100%;
+    padding: 100px 0 0 0;
+  }
+
+  .hd .gnb a {
+    display: block;
+  }
+
+  .hd .gnb > li {
+    width: 100%;
+  }
+
+  .hd .gnb > li > a {
+    padding: 1rem;
+    font-weight: bold;
+  }
+
+  .sub a {
+    padding-top: 5px;
+    padding-left: calc(1rem + 10px);
+    padding-bottom: 5px;
+  }
+
+  .hd .func {
+    display: none;
+  }
+  .ham {
+    display: block;
+    position: relative;
+    z-index: 10;
+  }
+
+  .hd .gnb.on {
+    display: flex;
+  }
+  .hd .func.on {
+    display: block;
+    position: absolute;
+    top: 50px;
+    left: calc(50% + 1rem);
+    z-index: 10;
+  }
+
+  .hd .ham.on .fa-bars {
+    display: none;
+  }
+
+  .hd .ham .fa-x {
+    display: none;
+  }
+
+  .hd .ham.on .fa-x {
+    display: block;
+  }
+}

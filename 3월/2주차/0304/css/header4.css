@@ -1,0 +1,93 @@
+@charset 'utf-8';
+
+body {
+  border: 1px solid red;
+}
+
+.wrap * {
+  border: 1px solid lightblue;
+}
+
+.mw {
+  max-width: 1200px;
+  width: calc(100% - 2rem);
+  margin: auto;
+}
+
+.hd {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.hd .logo {
+  padding: 1rem 0;
+  width: 200px;
+}
+
+.hd .gnb {
+  display: flex;
+}
+
+.hd .gnb a {
+  display: block;
+  white-space: nowrap;
+}
+
+.hd .gnb > li {
+  position: relative;
+  padding: 0.8rem 0;
+}
+
+.hd .gnb > li > a {
+  padding: 1rem 2rem;
+}
+
+.hd .gnb .sub {
+  border: 1px solid black;
+  border-radius: 20px;
+  position: absolute;
+  width: 100%;
+  top: 100%;
+  text-align: center;
+  transition: opacity 0.3s;
+  opacity: 0;
+  /* height: 0; */
+  overflow: hidden;
+  visibility: hidden;
+}
+
+/* 이 부분... */
+.hd .gnb > li:hover .sub {
+  opacity: 1;
+  /* height: 100%; */
+  padding: 10px;
+  visibility: visible;
+}
+
+.hd .gnb .sub li::before {
+  content: "";
+  position: absolute;
+  bottom: 5px;
+}
+
+.hd .gub .sub li {
+  position: relative;
+}
+
+.hd .gnb .sub a {
+  padding: 0.3rem;
+}
+
+.hd .func {
+  /* display: flex; */
+}
+
+.hd .func a {
+  border: 1px solid black;
+  border-radius: 20px;
+  padding: 0.5rem 1rem;
+  font-size: 0.8rem;
+  white-space: nowrap;
+}

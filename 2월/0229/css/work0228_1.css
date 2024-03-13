@@ -1,0 +1,105 @@
+* {
+  margin: 0;
+  padding: 0;
+  /* box-sizing의 기본값은 content-box이다 */
+  box-sizing: border-box;
+}
+
+:root {
+  --gap1: 16px;
+  --point-c1: #e1f6ef;
+}
+
+.banner2 {
+  /* border: 1px solid red; */
+  min-width: 400px;
+  width: calc(100% - 32px);
+  max-width: 600px;
+  margin: 100px auto;
+  background-color: var(--point-c1);
+  border-radius: var(--gap1);
+  padding: calc(var(--gap1) * 2);
+  position: relative;
+  top: 0;
+  transition: 0.3s;
+}
+
+.banner2 > * {
+  /* border: 1px solid red; */
+}
+
+.banner2 img {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  width: 20%;
+  transform: translateY(-50%);
+}
+
+.banner2 span {
+  color: darkcyan;
+  font-weight: bold;
+}
+
+.banner2 h3 {
+  width: calc(100% - (20% - 10px));
+  padding: var(--gap1) 0;
+}
+
+.banner2 a {
+  background-color: white;
+  color: black;
+  text-decoration: none;
+  height: 40px;
+  display: inline-block;
+  border-radius: 20px;
+  padding: 0px 50px 0 20px;
+  line-height: 40px;
+  /* in-line block이므로 4px이 포함되어있다. */
+  margin-right: 16px;
+  margin-bottom: 10px;
+  /* transition-property: background-color;
+  transition-duration: 0.3s; */
+  transition: 0.3s;
+  position: relative;
+}
+
+.banner2 a:hover {
+  background-color: green;
+  color: white;
+}
+
+/* 포지션으로 우선순위를 낮추기 위해 after보다 before를 사용 */
+.banner2 a::before {
+  /* 폰트를 css에 적용할때 \로 사용 */
+  content: "\f061";
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+
+  /* border: 1px solid red; */
+  /* 가상요소는 display 속성이 없다. */
+  /* 포지션을 주면 display가 none에서 inline으로 변경된다. */
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+}
+
+.banner2:hover {
+  top: -10px;
+}
+
+.c1 {
+  color: blueviolet;
+  font-size: 2em;
+}
+
+@media (max-width: 400px) {
+  .banner2 img {
+    transform: translateY(0);
+    top: auto;
+    bottom: 16px;
+    right: 16px;
+    width: 30%;
+  }
+}
