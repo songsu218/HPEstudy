@@ -1,9 +1,20 @@
 @charset 'utf-8';
-@import url(./my_reset.css);
+/* 폰트 페이스는 폰트 하나당 한개씩 작성. */
 @font-face {
-  font-family: "S-CoreDream-3Light";
-  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff")
-    format("woff");
+  font-family: "Noto Sans KR";
+  src: url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "GmarketSansMedium";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "GmarketSansBold";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
@@ -11,7 +22,202 @@
 /* 
 font-family: "Font Awesome 6 Free";
 font-weight: 900;
-Solid → 900
-Regular, Brands → 400
-Light → 300
- */
+*/
+
+/* root = body */
+:root {
+  --color-mb: #144aaa;
+  --color-sb: #f0f4ff;
+  --color-bk: #000000;
+  --color-dg: #333333;
+  --color-lg: #777777;
+  --color-wh: #ffffff;
+
+  --font-size-m: 1.312rem;
+  --font-size-s: 0.857em;
+  --font-size-f: 0.875rem;
+  --gap: 1rem;
+
+  font-family: "Noto Sans KR";
+}
+
+.mw {
+  max-width: 1440px;
+  /* width: calc(100% - 32px); */
+  width: calc(100% - calc(var(--gap) * 2));
+  margin: auto;
+}
+
+/* header 시작 .hd > nav > h1+gnb+.person+.ham  */
+.hd {
+  background-color: lightcyan;
+}
+
+.hd > nav {
+  border: 1px solid red;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: calc(var(--gap) / 2) 0;
+}
+
+.hd > nav > * {
+  border: 1px solid lightblue;
+}
+
+.hd img {
+  height: 80px;
+  padding-right: 6rem;
+}
+
+@media (min-width: 1101px) {
+  /* pc 버전 .gnb */
+
+  /* gnb 관련 코드 - 여기부터 */
+  .gnb {
+    display: flex;
+  }
+
+  .gnb::before {
+    background-color: var(--color-sb);
+    content: "";
+    position: absolute;
+    height: 0px;
+    width: 100%;
+    top: 110px;
+    left: 0;
+    visibility: hidden;
+    transition: 0.3s;
+  }
+
+  .gnb:hover::before {
+    height: 180px;
+    visibility: visible;
+  }
+
+  .gnb a {
+    display: block;
+    white-space: nowrap;
+  }
+
+  .gnb > li {
+    border: 1px solid lavender;
+    position: relative;
+  }
+
+  .gnb > li > a {
+    border: 1px solid red;
+    font-family: "GmarketSansBold";
+    font-size: 1rem;
+    padding: 1rem 6rem 1rem 0.5rem;
+  }
+
+  .gnb > li:hover > a {
+    color: var(--color-mb);
+  }
+
+  .gnb:hover .sub {
+    height: 180px;
+    visibility: visible;
+  }
+
+  .sub {
+    min-width: 100%;
+    /* display: none; */
+    border: 1px solid rebeccapurple;
+    position: absolute;
+    padding-left: 0.5rem;
+    height: 0;
+    overflow: hidden;
+    transition: 0.3s;
+    visibility: hidden;
+  }
+
+  .sub > li:first-of-type {
+    padding-top: 50px;
+  }
+
+  .sub a {
+    border: 1px solid red;
+    font-size: 1rem;
+    padding-bottom: 0.2rem;
+    transition: 0.3s;
+  }
+
+  .sub a:hover {
+    color: var(--color-mb);
+  }
+
+  .sub a::after {
+    content: "";
+    display: inline-block;
+    background-color: var(--color-mb);
+    border-radius: 50%;
+    height: 5px;
+    width: 5px;
+    position: relative;
+    bottom: 5px;
+    left: 5px;
+    opacity: 0;
+    transition: 0.3s;
+  }
+
+  .sub a:hover::after {
+    left: 10px;
+    opacity: 1;
+  }
+
+  /* .gnb 관련 코드 - 여기까지 */
+}
+.person a {
+  border: 1px solid red;
+  font-size: 0.75rem;
+  position: relative;
+  padding-right: 0.25rem;
+  white-space: nowrap;
+}
+
+.person a::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  background-color: var(--color-mb);
+  bottom: -10px;
+  opacity: 0;
+  transition: 0.3s;
+}
+
+.person a:hover::before {
+  bottom: -5px;
+  opacity: 1;
+}
+
+.ham {
+  display: none;
+}
+
+@media (max-width: 1400px) {
+  .hd img {
+    padding-right: 1rem;
+  }
+
+  .gnb > li > a {
+    padding-right: 5rem;
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 1200px) {
+  .gnb,
+  .person {
+    display: none;
+  }
+
+  .ham {
+    display: block;
+  }
+}
+
+@media (max-width: 1100px) {
+}
