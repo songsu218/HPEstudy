@@ -1,0 +1,149 @@
+.inner {
+  position: relative;
+}
+
+.eduMonth {
+  border: 1px solid red;
+}
+
+.eduMonth * {
+  border: 1px solid lightblue;
+}
+
+.eduMonth h2 {
+  height: 100%;
+  line-height: 1;
+  color: white;
+  padding-top: 170px;
+  padding-bottom: 30px;
+}
+
+.eduMonth h2 strong {
+  display: block;
+  text-align: center;
+  font-size: 40px;
+}
+
+.eduMonth span {
+  text-align: center;
+  display: block;
+}
+
+.calendarArea {
+  display: flex;
+}
+
+.year {
+  position: relative;
+  padding: 0rem 1rem;
+}
+
+.year strong {
+  display: block;
+  font-size: 40px;
+  text-align: center;
+  line-height: 1;
+}
+
+.year span {
+  display: block;
+  line-height: 1;
+  font-size: 14px;
+}
+
+.year button {
+  background-color: transparent;
+  position: absolute;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  line-height: 1;
+  padding: 0;
+  border: none;
+}
+
+.year button:nth-of-type(1) {
+  top: 15px;
+  left: 0px;
+}
+
+.year button:nth-of-type(2) {
+  top: 15px;
+  right: 0px;
+}
+
+.day {
+  padding-top: 5px;
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+  height: 100%;
+}
+.day li {
+  width: 100%;
+  height: 100%;
+  line-height: 2.5;
+  text-align: center;
+  transition: 0.3;
+  text-decoration: underline;
+}
+
+.day li:hover {
+  border: 1px solid white;
+  border-radius: 50%;
+}
+
+.calendarArea > a {
+  position: absolute;
+  top: 231px;
+  right: 0;
+}
+
+.calendarArea > a::after {
+  content: " +";
+}
+
+.eduSlide .swiper-slide {
+  display: flex;
+  justify-content: center;
+}
+
+.eduSlide .card {
+  position: relative;
+}
+
+.eduSlide .card img {
+  border-radius: 11%;
+  height: 520px;
+  width: 373px;
+  object-fit: cover;
+  filter: brightness(0.4);
+}
+
+.eduSlide .info span {
+  display: inline-block;
+  font-weight: bold;
+  color: #7e8de2;
+  padding-right: 10px;
+}
+
+.eduSlide .info strong {
+  display: block;
+  font-size: 20px;
+}
+
+.eduSlide .desc {
+  position: absolute;
+  left: 120px;
+  top: 130px;
+  font-size: 20px;
+  text-align: center;
+}
+
+.eduSlide .desc span {
+}
+
+.eduSlide .desc strong {
+  padding: 5px;
+  font-size: 25px;
+}
