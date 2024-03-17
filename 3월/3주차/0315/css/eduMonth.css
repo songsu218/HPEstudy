@@ -3,28 +3,227 @@
   color: var(--color-wh);
   padding-top: 150px;
 }
-
 .eduMonth a {
   color: white;
 }
-
 .eduMonth .inner {
   border: 1px solid red;
-  max-width: 100%;
 }
 
 .eduMonth h2 {
+  border: 1px solid yellow;
   text-align: center;
 }
-
 .eduMonth h2 > * {
   display: block;
 }
-
-.eduMonth h2 strong {
+section h2 strong {
+  letter-spacing: -3px;
+  font-size: 40px;
+  padding-bottom: 10px;
+}
+section h2 span {
+  font-size: 16px;
+}
+.calendarArea {
+  padding: 50px 0;
+  position: relative;
+}
+.calendarArea > * {
+  border: 1px solid yellow;
+}
+.eduMonth .year {
+  position: relative;
+  text-align: center;
+}
+.eduMonth .year > * {
+  display: block;
+}
+.eduMonth .year strong {
   font-size: 40px;
 }
+.eduMonth .year span {
+  font-size: 14px;
+}
+.eduMonth .year button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: transparent;
+  border: none;
+  outline: none;
+  color: white;
+  cursor: pointer;
+}
+.eduMonth .year .prev {
+  left: -20px;
+  transform: rotate(180deg) translateY(50%);
+}
+.eduMonth .year .next {
+  right: -20px;
+}
 
-.eduMonth h2 span {
-  font-size: 16px;
+.eduMonth .calendarArea,
+.eduMonth .day {
+  display: flex;
+  gap: 1rem;
+}
+.eduMonth .calendarArea {
+  gap: 30px;
+}
+.eduMonth .day {
+  flex: 1;
+  align-items: center;
+  justify-content: space-around;
+}
+.eduMonth .day li {
+  position: relative;
+  text-decoration: underline;
+  cursor: pointer;
+  border: 1px solid red;
+}
+.eduMonth .day li::before {
+  content: "";
+  position: absolute;
+  width: 35px;
+  height: 35px;
+  border: 1px solid white;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+
+  opacity: 0;
+  transition: 0.3s;
+}
+.eduMonth .day li:hover::before,
+.eduMonth .day li.on::before {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+/* .eduMonth .day li {
+  border: 1px solid transparent;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.eduMonth .day li:hover,
+.eduMonth .day li.on {
+  border: 1px solid white;
+  transform: scale(2);
+} */
+.eduMonth .more2 {
+  position: absolute;
+  right: 0;
+  top: -30px;
+}
+.eduSlide .swiper-slide {
+  border: 1px solid red;
+}
+
+.eduSlide {
+  width: calc(100% + 100px);
+  left: -50px;
+  padding: 50px 0 100px 0;
+}
+.eduSlide .swiper-slide-active {
+}
+.eduSlide .card {
+  position: relative;
+  overflow: hidden;
+}
+.eduSlide .card .img {
+  height: 25vw;
+}
+.eduSlide .card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 1rem;
+}
+.eduSlide .card .info {
+}
+.eduSlide .card .more3 {
+  z-index: 10;
+}
+.eduSlide .card .more3,
+.eduSlide .card .desc {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  width: 100%;
+  height: 100%;
+}
+.eduSlide .card .desc {
+  /* display: none; */
+  background-color: rgba(0, 0, 0, 0.8);
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  opacity: 0;
+  transition: 0.3s;
+}
+.eduSlide .swiper-slide:hover .desc {
+  opacity: 1;
+  left: 0;
+}
+@media (max-width: 1100px) {
+  .eduMonth .calendarArea {
+    display: none;
+  }
+}
+
+.test .inner {
+  border: 1px solid red;
+  position: relative;
+}
+.more {
+  position: absolute;
+  right: 0;
+  top: 0;
+  font-size: 20px;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+}
+.more::before,
+.more::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 1px solid blue;
+  z-index: -1;
+  transition: 0.2s;
+  transition-timing-function: linear;
+}
+.more::before {
+  background-color: white;
+  opacity: 1;
+}
+.more::after {
+  background-color: blue;
+  transform: scale(0);
+  opacity: 0;
+}
+.more:hover {
+  color: white;
+}
+.more:hover::after {
+  transform: scale(1);
+  opacity: 1;
+}
+.more:hover::before {
+  transform: scale(1.2);
+  opacity: 0;
 }

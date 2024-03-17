@@ -186,6 +186,12 @@ font-weight: 900;
   .person {
     display: none;
   }
+
+  .gnb.on,
+  .person.on {
+    display: block;
+  }
+
   .ham {
     display: block;
   }
