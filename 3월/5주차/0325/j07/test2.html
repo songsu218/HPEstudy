@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./3dom.js" defer></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .con {
+            position: relative;
+        }
+
+        .con .bg {
+            position: absolute;
+            width: 120px;
+            height: 60px;
+            left: 0px;
+            background-color: rgb(101, 137, 137);
+            border-radius: 80px;
+            transition: 0.3s;
+        }
+
+        ul {
+            /* background-color: lightgray; */
+            display: flex;
+            position: relative;
+            z-index: 1;
+        }
+
+        ul>li {
+            /* background-color: beige; */
+            margin: 5px;
+            cursor: pointer;
+            list-style: none;
+            padding: 1rem 2rem;
+            border-radius: 60px;
+        }
+
+        ul>li.on {
+            color: yellow;
+            font-weight: bold;
+        }
+
+        .content>div {
+            border: 3px solid tomato;
+            display: none;
+            height: 250px;
+        }
+
+        .content>div.on {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="con">
+        <!-- <span class="bg"></span> -->
+        <ul class="list">
+            <li>list1</li>
+            <li>list2 list2</li>
+            <li>list3</li>
+            <li>list4 list4 list4</li>
+        </ul>
+        <div class="content">
+            <div class="on">1번</div>
+            <div>2번</div>
+            <div>3번</div>
+            <div>4번</div>
+        </div>
+    </div>
+    <!-- <button class="btn1">클릭!</button> -->
+</body>
+
+</html>
