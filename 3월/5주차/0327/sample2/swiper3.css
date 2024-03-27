@@ -1,0 +1,53 @@
+/** @format */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.sec {
+  border: 1px solid red;
+}
+
+.sec .inner {
+  width: 800px;
+  margin: auto;
+  border: 5px solid lightblue;
+}
+
+.swiper-h {
+  border: 1px solid #eee;
+}
+
+.swiper-v {
+  border: 1px solid #999;
+  width: 400px;
+  height: 250px;
+}
+
+.sec .swiper-h {
+  border: 1px solid red;
+}
+
+.sec .swiper-h .swiper-slide {
+  border: 1px solid lightcoral;
+}
+
+.sec .swiper-h > ul > li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem;
+}
+
+.sec .swiper-h .swiper {
+  margin: 0;
+}
+
+.sec .pgH {
+  width: auto;
+  top: 60%;
+  left: 2rem;
+  bottom: auto;
+}
