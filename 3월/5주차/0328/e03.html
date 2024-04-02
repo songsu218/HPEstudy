@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .con {
+        width: 400px;
+        height: 400px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: aliceblue;
+        margin: 100px auto;
+    }
+
+    .inner {
+        background-color: lightcoral;
+        width: 50%;
+        height: 50%;
+        display: inherit;
+        justify-content: inherit;
+        align-items: inherit;
+    }
+
+    .btn {
+        padding: 1rem;
+    }
+</style>
+
+<body>
+    <!-- 캡처링 -->
+    <!-- 버블링 -->
+    <div class="con">
+        <div class="inner">
+            <button class="btn">클릭~!</button>
+        </div>
+    </div>
+    <section style="height: 200vh;">영역</section>
+    <a href="#">어디론가 링크</a>
+    <script>
+        const $con = document.querySelector('.con');
+        const $inner = document.querySelector('.inner');
+        const $btn = document.querySelector('.btn');
+
+        const link = document.querySelectorAll('a');
+        // 이해안됨
+        link.forEach((a) =>
+            a.addEventListener('click', (e) => {
+                e.preventDefault();
+            })
+        );
+
+        $con.addEventListener('click', (e) => {
+            // 1. 막는방법
+            if (e.target !== e.currentTarget) {
+                return;
+            }
+            console.log('con target 클릭됨', e.target);
+            console.log('con currentTarget 클릭됨', e.currentTarget);
+            console.log('------------------------------------------');
+        })
+        $inner.addEventListener('click', (e) => {
+            if (e.target !== e.currentTarget) {
+                return;
+            }
+            // e.stopPropagation();
+            console.log('inner target클릭됨', e.target);
+            console.log('inner currentTarget 클릭됨', e.currentTarget);
+            console.log('------------------------------------------');
+        })
+        $btn.addEventListener('click', (e) => {
+            if (e.target !== e.currentTarget) {
+                return;
+            }
+            // e.preventDefault();
+            // e.stopPropagation();
+            // e.stopImmediatePropagation();
+            console.log('btn target 클릭됨', e.target);
+            console.log('btn currentTarget 클릭됨', e.currentTarget);
+            console.log('------------------------------------------');
+        })
+    </script>
+</body>
+
+</html>

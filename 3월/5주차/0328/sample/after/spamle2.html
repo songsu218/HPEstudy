@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        section {
+            border: 1px solid red;
+            padding: 3rem;
+            font-size: 7.5vw;
+            text-transform: uppercase;
+            white-space: nowrap;
+            overflow: hidden;
+        }
+
+        .marquee {
+            border: 1px solid blue;
+            /* margin-left: -230%; */
+            animation: textAni 20s infinite linear;
+        }
+
+        @keyframes textAni {
+            0% {
+                margin-left: 0;
+            }
+
+            100% {
+                /* 문장 끝 */
+                /* margin-left: -130%; */
+                /* 문장이 사라지는 구간 */
+                margin-left: -232%;
+            }
+        }
+    </style>
+    <section>
+        <div class="marquee">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur
+                adipisicing elit.</p>
+        </div>
+    </section>
+</body>
+
+</html>

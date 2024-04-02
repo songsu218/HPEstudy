@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* html {
+            scroll-behavior: smooth;
+        } */
+
+        header,
+        footer {
+            height: 100px;
+            background-color: lightgray;
+        }
+
+        section {
+            height: 100vh;
+            background-color: #eaeaea;
+        }
+
+        section:nth-of-type(even) {
+            background-color: beige;
+        }
+
+        .goTop {
+            position: fixed;
+            bottom: 200px;
+            right: 16px;
+            padding: 1rem;
+            opacity: 0.5;
+            background-color: tomato;
+            transform: rotate(-90deg);
+            transform-origin: right center;
+            visibility: hidden;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .goTop.on {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        header {
+            transition: top 0.3s;
+            top: -50px;
+        }
+
+        header.on {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background-color: aliceblue;
+        }
+    </style>
+    <div class="wrap">
+        <header id="top">헤더영역</header>
+        <main>
+            <section>1</section>
+            <section>2</section>
+            <section>3</section>
+            <section>4</section>
+            <section>5</section>
+        </main>
+        <footer>하단영역</footer>
+        <!-- css로 스크롤 되는 방법 -->
+        <!-- <a href="#top" class="goTop">gotop</a> -->
+        <a class="goTop">gotop</a>
+    </div>
+
+    <script>
+        const header = document.querySelector('header');
+
+        // scrollTop의 사이즈가 200px 이상일 때
+        // .gotop 보이도록 처리
+        // scrollTop 200px 이하이면 안보이게 처리
+        // .goTop을 클릭하면 상단으로 이동
+        const btnGoTop = document.querySelector('.goTop');
+        let html = document.documentElement;
+        window.addEventListener('scroll', (e) => {
+            let s = html.scrollTop
+            if (s > 200) {
+                btnGoTop.classList.add('on')
+                header.classList.add('on')
+            }
+            else {
+                btnGoTop.classList.remove('on');
+                header.classList.remove('on');
+            }
+        });
+
+        btnGoTop.addEventListener('click', (e) => {
+            e.preventDefault();
+            // window.scrollTo({
+            //     top: 0,
+            //     left: 0,
+            //     behavior: 'smooth',
+            // });
+            window.scrollBy({
+                top: 200,
+                left: 0,
+                behavior: 'smooth',
+            });
+        })
+    </script>
+</body>
+
+</html>
