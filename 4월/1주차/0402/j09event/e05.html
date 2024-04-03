@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+<body>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        section {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            line-height: 2;
+        }
+
+        section>div {
+            width: 60%;
+        }
+
+        .mainImg {
+            width: 50%;
+            height: 300px;
+            filter: grayscale(100%);
+            opacity: 0.5;
+            overflow: hidden;
+        }
+
+        .mainImg img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .mainImg:hover {
+            filter: grayscale(0);
+            opacity: 0.8;
+        }
+
+        /* 
+        .mainImg:hover img {
+            transform: translate(20px, 20px);
+        } */
+
+
+        section>div>span {
+            border: 1px solid red;
+            border-bottom: 2px dotted tomato;
+            display: inline-block;
+            padding: 1rem;
+        }
+
+        .cursor {
+            position: absolute;
+            z-index: 9999;
+            width: 20px;
+            height: 20px;
+            background-color: rgba(200, 50, 100, 0.5);
+            border: 3px solid tomato;
+            border-radius: 50%;
+            /* transition: 0.3s;
+            top: 50px;
+            left: 50px; */
+            transform: translate(100px, 200px);
+            pointer-events: none;
+        }
+
+        .cursor.on {
+            width: 50px;
+            height: 50px;
+            background-color: rgba(200, 50, 100, 0.5);
+        }
+    </style>
+    <div class="cursor"></div>
+    <main>
+        <section>
+            <div>
+                Lorem, ipsum dolor sit amet <span class="st1 over">consectetur</span> adipisicing elit. Reiciendis
+                quaerat possimus eos. Qui
+                molestias cum beatae ad eum tenetur architecto laboriosam aspernatur corporis? Incidunt cum doloribus
+                iste
+                quia possimus quae.
+            </div>
+        </section>
+        <section>
+            <div class="mainImg">
+                <img src="https://cdn.pixabay.com/photo/2020/11/24/10/37/city-5772121_960_720.jpg" alt="">
+            </div>
+            <div>
+                Lorem, ipsum dolor sit amet <span class="st1 over">consectetur</span> adipisicing elit.
+                Reiciendis
+                quaerat possimus eos. Qui
+                molestias cum beatae ad eum tenetur <span class="st2 over">architecto</span> laboriosam aspernatur
+                corporis?
+                Incidunt cum doloribus iste
+                quia possimus quae.
+            </div>
+        </section>
+        <section class="">
+            <div>
+                Lorem, ipsum dolor sit amet <span class="st1 over">consectetur</span> adipisicing elit. Reiciendis
+                quaerat possimus eos. Qui
+                molestias cum beatae ad eum tenetur architecto laboriosam <span class="st3 over">aspernatur</span>
+                corporis?
+                Incidunt cum doloribus iste
+                quia possimus quae.
+            </div>
+        </section>
+    </main>
+    <script src="./e05.js"></script>
+</body>
+
+</html>
